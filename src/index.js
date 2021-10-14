@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Store } from './store';
+import { Provider } from 'react-redux';
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  //Provider Pattern possibilita que a Store seja acessível a todos os componentes abaixo dele.
+  //Mais sobre Proveder Pattern: https://medium.com/@oieduardorabelo/padrões-em-react-provider-pattern-b520c37ed733
+
+  <Provider store={Store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
